@@ -1,4 +1,4 @@
-module github.com/princjef/gomarkdoc
+module github.com/phsym/gomarkdoc
 
 go 1.19
 
