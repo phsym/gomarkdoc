@@ -7,6 +7,8 @@
 
 # gomarkdoc
 
+> This is a temporary fork of https://github.com/princjef/gomarkdoc with module renamed, waiting for PR https://github.com/princjef/gomarkdoc/pull/82 to be reviewed and merged
+
 ```go
 import "github.com/phsym/gomarkdoc"
 ```
