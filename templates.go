@@ -7,7 +7,7 @@ var templates = map[string]string{
 	{{- if eq .Kind "paragraph" -}}
 		{{- paragraph .Text -}}
 	{{- else if eq .Kind "code" -}}
-		{{- codeBlock "" .Text -}}
+		{{- codeBlock "go" .Text -}}
 	{{- else if eq .Kind "header" -}}
 		{{- header .Level .Text -}}
 	{{- end -}}
