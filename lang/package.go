@@ -89,22 +89,6 @@ func NewPackageFromBuild(log logger.Logger, pkg *build.Package, opts ...PackageO
 		cfg.docParser = untrimmedPkg.Parser()
 	}
 
-	fmt.Println(docPkg.Parser().LookupPackage("ginx"))
-
-	lp := cfg.docParser.LookupPackage
-	cfg.docParser.LookupPackage = func(name string) (importPath string, ok bool) {
-		importPath, ok = lp(name)
-		fmt.Println("Lookup Pkg", name, "-->", importPath, ok)
-		return
-	}
-
-	ls := cfg.docParser.LookupSym
-	cfg.docParser.LookupSym = func(recv, name string) (ok bool) {
-		ok = ls(recv, name)
-		fmt.Println("Lookup Sym", recv, name, ok)
-		return
-	}
-
 	files, err := parsePkgFiles(pkg, cfg.FileSet)
 	if err != nil {
 		return nil, err
